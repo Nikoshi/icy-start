@@ -1,0 +1,22 @@
+version: "3"
+
+networks:
+  web:
+    external: true
+
+services:
+
+  web:
+    image: registry.gitlab.com/seafen02/fen-start:latest
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.startkehetcom.rule=Host(`start.kehet.com`)
+      - traefik.http.routers.startkehetcom.tls=true
+      - traefik.http.routers.startkehetcom.tls.certresolver=myresolver
+      - traefik.docker.network=web
+      - traefik.http.routers.startkehetcom.middlewares=ratelimit
