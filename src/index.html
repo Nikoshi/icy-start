@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <title>Start Page</title>
+    <script>
+	document.getElementById("searchfield").focus();
+    </script>
 </head>
 <body>
 
@@ -31,7 +34,8 @@
 
         <ul>
             <li class="dark_yellow">local</li>
-            <li><a href="http://192.168.43.46:8080/guacamole" rel="nofollow">guacamole</a></li>
+	    <li><a href="http://192.168.43.46:9000/" rel="nofollow">portainer</a></li>
+	    <li><a href="http://192.168.43.46:8080/guacamole" rel="nofollow">guacamole</a></li>
             <li><a href="http://192.168.43.46:8081" rel="nofollow">lounce-irc</a></li>
             <li><a href="http://192.168.43.46:8082" rel="nofollow">overleaf</a></li>
 	    <li><a href="https://169.254.4.152/" rel="nofollow">ESXi</a></li>
@@ -58,7 +62,7 @@
         <span class="dark_red">$</span>
 
         <form id="search" action="https://duckduckgo.com/">
-            <input type="text" maxlength="250" tabindex="1" autofocus name="q" value="" autocomplete="off" />
+            <input type="text" id="searchfield" maxlength="250" tabindex="1" autofocus name="q" value="" autocomplete="off" />
         </form>
     </div>
 
